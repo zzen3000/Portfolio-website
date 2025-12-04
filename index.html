@@ -1,205 +1,195 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio of Iswan Anak Edison, Multimedia Computing Student.">
     <title>Iswan Anak Edison | Portfolio</title>
     
-    <!-- Using Google Fonts for better typography -->
+    <!-- FONTS: Roboto (Body) and VT323 (Pixelated/Retro Style) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=VT323&display=swap" rel="stylesheet">
     
-    <!-- LINK TO EXTERNAL CSS FILE -->
+    <!-- Link to CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Iswan.Dev</div>
-                
-                <!-- JS Feature 1: Mobile Hamburger Menu -->
-                <div class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
+    <!-- THEME TOGGLE BUTTON (Fixed position) -->
+    <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark/Light Mode">
+        <span class="theme-icon">☀</span>
+    </button>
 
-                <ul class="nav-links">
-                    <li><a href="#home" class="nav-link">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+    <div class="layout-wrapper">
+        
+        <!-- SIDEBAR NAVIGATION (Left Side) -->
+        <aside class="sidebar">
+            <div class="profile-container">
+                <!-- Circular Profile Image Placeholder -->
+                <div class="profile-img-circle">
+                    <!-- Replace the src below with your actual image URL if you have one -->
+                    <img src="https://via.placeholder.com/150/333333/FFFFFF/?text=Iswan" alt="Iswan Profile" id="profile-pic">
+                </div>
+                <h2 class="profile-name pixel-font">Iswan<br>Edison</h2>
+            </div>
+
+            <nav class="vertical-nav">
+                <ul>
+                    <li><a href="#home" class="nav-link active">HOME</a></li>
+                    <li><a href="#about" class="nav-link">ABOUT ME</a></li>
+                    <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+                    <li><a href="#contact" class="nav-link">CONTACT</a></li>
                 </ul>
             </nav>
+
+            <div class="sidebar-footer">
+                <div class="social-icons">
+                    <!-- Simple text icons -->
+                    <a href="#">LI</a>
+                    <a href="#">GH</a>
+                    <a href="#">EM</a>
+                </div>
+                <p>&copy; <span id="year">2024</span></p>
+            </div>
+        </aside>
+
+        <!-- MOBILE MENU TOGGLE (Visible only on mobile) -->
+        <div class="mobile-toggle" id="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-    </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="home">
-            <div class="container hero-content">
-                <h1>Hello, I'm Iswan Anak Edison</h1>
-                <p class="hero-subtitle">
-                    Multimedia Computing Student @ UNIMAS.<br>
-                    I build innovative digital media projects and user-centered experiences.
-                </p>
-                <a href="#projects" class="btn">View My Work</a>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="about-grid">
-                    
-                    <!-- Bio & Education -->
-                    <article class="about-card">
-                        <h3>Education & Background</h3>
-                        <p style="margin-bottom: 1.5rem;">
-                            I am a motivated student with foundations in programming, web development, and graphic design. 
-                            I am passionate about designing user-centered digital experiences and contributing to real-world applications.
-                        </p>
-                        
-                        <div class="education-item">
-                            <h4>Bachelor of Computer Science (Multimedia Computing)</h4>
-                            <p>UNIMAS | Expected Grad: 2027</p>
-                            <small>CGPA: 2.91 (Semester 4)</small>
-                        </div>
-                        
-                        <div class="education-item">
-                            <h4>Sijil Matrikulasi KPM</h4>
-                            <p>Johor Matriculation College | 2021/2022</p>
-                            <small>CGPA: 3.00</small>
-                        </div>
-                    </article>
-
-                    <!-- Skills -->
-                    <article class="about-card">
-                        <h3>Technical Skills</h3>
-                        <div style="margin-bottom: 1.5rem;">
-                            <h4>Programming & Databases</h4>
-                            <div class="skills-list">
-                                <span class="skill-tag">HTML/CSS</span>
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">C#</span>
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">MySQL</span>
-                            </div>
-                        </div>
-
-                        <div style="margin-bottom: 1.5rem;">
-                            <h4>Tools & Engines</h4>
-                            <div class="skills-list">
-                                <span class="skill-tag">Unity</span>
-                                <span class="skill-tag">Godot</span>
-                                <span class="skill-tag">Figma</span>
-                                <span class="skill-tag">Adobe Suite</span>
-                                <span class="skill-tag">Git</span>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects">
-            <div class="container">
-                <h2 class="section-title">My Projects</h2>
-                <div class="projects-grid">
-                    
-                    <!-- Project 1 -->
-                    <article class="project-card">
-                        <div class="project-img-placeholder">
-                            [Game Screenshot Placeholder]
-                        </div>
-                        <div class="project-content">
-                            <div class="project-tech">Unity / Godot / C#</div>
-                            <h3>2D Platformer Game</h3>
-                            <p>Built a complete 2D platformer implementing game logic, physics, UI, and integrating original 2D art assets.</p>
-                        </div>
-                    </article>
-
-                    <!-- Project 2 -->
-                    <article class="project-card">
-                        <div class="project-img-placeholder">
-                            [Database Diagram Placeholder]
-                        </div>
-                        <div class="project-content">
-                            <div class="project-tech">MySQL / MariaDB</div>
-                            <h3>Car Rental Database System</h3>
-                            <p>Designed a normalized MySQL schema and built a system for managing vehicle inventory, customer bookings, and admin reports.</p>
-                        </div>
-                    </article>
-
-                    <!-- Project 3 -->
-                    <article class="project-card">
-                        <div class="project-img-placeholder">
-                            [Figma Prototype Placeholder]
-                        </div>
-                        <div class="project-content">
-                            <div class="project-tech">Figma / UI/UX</div>
-                            <h3>Sarawak Metro ART App</h3>
-                            <p>UI/UX Design project for KUTS Sarawak Metro. Created a user-friendly booking prototype.</p>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <div class="container">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="contact-form-container">
-                    <p style="margin-bottom: 2rem;">
-                        Located in Nusajaya, Johor. Open to opportunities.<br>
-                        Email: <a href="mailto:iswanEdison29@gmail.com" style="color: var(--primary-color);">iswanEdison29@gmail.com</a>
+        <!-- MAIN CONTENT AREA (Right Side) -->
+        <main class="main-content">
+            
+            <!-- HERO SECTION -->
+            <section id="home" class="section hero-section">
+                <div class="hero-overlay">
+                    <h1 class="pixel-font glitch-text">HELLO,</h1>
+                    <p class="hero-intro">
+                        I am <span class="highlight">Iswan Anak Edison</span>.<br>
+                        Multimedia Computing Student & Game Developer.
                     </p>
-                    
-                    <!-- JS Feature 2: Contact Form Validation -->
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" rows="5" class="form-control" required></textarea>
-                        </div>
-                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
-                    </form>
-                    <div id="formFeedback" class="feedback-msg">Thank you! Your message has been sent.</div>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn pixel-font">VIEW MY WORK</a>
+                        <a href="#contact" class="btn btn-outline pixel-font">HIRE ME</a>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                <a href="#" aria-label="GitHub">GitHub</a>
-                <a href="#" aria-label="Email">Email</a>
-            </div>
-            <p>&copy; <span id="year">2024</span> Iswan Anak Edison. All Rights Reserved.</p>
-        </div>
-    </footer>
+            <!-- ABOUT SECTION -->
+            <section id="about" class="section">
+                <div class="container">
+                    <h2 class="section-title pixel-font">01. ABOUT ME</h2>
+                    <div class="about-grid">
+                        <div class="about-text">
+                            <p>
+                                I am a motivated Multimedia Computing student at UNIMAS with foundations in programming, 
+                                web development, and graphic design. Passionate about designing user-centered digital 
+                                experiences and contributing to real-world applications.
+                            </p>
+                            
+                            <div class="info-block">
+                                <h3 class="pixel-font">EDUCATION</h3>
+                                <ul class="timeline">
+                                    <li>
+                                        <strong>Bachelor of Computer Science (Multimedia Computing)</strong><br>
+                                        UNIMAS | Expected 2027 | CGPA: 2.91
+                                    </li>
+                                    <li>
+                                        <strong>Sijil Matrikulasi KPM</strong><br>
+                                        Johor Matriculation College | 2021/2022 | CGPA: 3.00
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="skills-block">
+                            <h3 class="pixel-font">TECH SKILLS</h3>
+                            <div class="skill-tags">
+                                <span>Unity</span>
+                                <span>Godot</span>
+                                <span>C#</span>
+                                <span>JavaScript</span>
+                                <span>HTML/CSS</span>
+                                <span>MySQL</span>
+                                <span>Figma</span>
+                                <span>Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <!-- LINK TO EXTERNAL JS FILE -->
+            <!-- PROJECTS SECTION -->
+            <section id="projects" class="section">
+                <div class="container">
+                    <h2 class="section-title pixel-font">02. WORKS</h2>
+                    <div class="projects-grid">
+                        
+                        <!-- Project 1 -->
+                        <div class="project-card">
+                            <div class="card-image"></div>
+                            <div class="card-content">
+                                <span class="card-category pixel-font">GAME DEV</span>
+                                <h3>2D Platformer Game</h3>
+                                <p>Built a complete 2D platformer implementing game logic (C#/GD Script), physics, UI, and integrating original 2D art assets.</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 2 -->
+                        <div class="project-card">
+                            <div class="card-image"></div>
+                            <div class="card-content">
+                                <span class="card-category pixel-font">DATABASE</span>
+                                <h3>Car Rental System</h3>
+                                <p>Designed a normalized MySQL database schema and built a functional system for managing vehicle inventory and bookings.</p>
+                            </div>
+                        </div>
+
+                        <!-- Project 3 -->
+                        <div class="project-card">
+                            <div class="card-image"></div>
+                            <div class="card-content">
+                                <span class="card-category pixel-font">UI/UX DESIGN</span>
+                                <h3>Sarawak Metro ART</h3>
+                                <p>UI/UX Design project for KUTS Sarawak Metro. Created a user-friendly booking prototype using Figma.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTACT SECTION -->
+            <section id="contact" class="section">
+                <div class="container">
+                    <h2 class="section-title pixel-font">03. CONTACT</h2>
+                    <div class="contact-wrapper">
+                        <p class="contact-sub">Located in Nusajaya, Johor. +60177545213</p>
+                        
+                        <form id="contactForm" class="contact-form">
+                            <div class="input-group">
+                                <input type="text" id="name" required placeholder="Name">
+                            </div>
+                            <div class="input-group">
+                                <input type="email" id="email" required placeholder="Email">
+                            </div>
+                            <div class="input-group">
+                                <textarea id="message" rows="5" required placeholder="Message"></textarea>
+                            </div>
+                            <button type="submit" class="btn pixel-font">SEND MESSAGE</button>
+                        </form>
+                        <div id="formFeedback" class="feedback-msg">Message Sent!</div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Link to JS -->
     <script src="script.js"></script>
 </body>
 </html>
