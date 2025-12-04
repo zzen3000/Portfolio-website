@@ -27,7 +27,7 @@
         <aside class="sidebar">
             <div class="profile-container">
                 <div class="profile-img-circle">
-                    <!-- ACCESSIBILITY FIX: More descriptive alt text -->
+                    <!-- Make sure you have the 'images' folder and 'profile.jpg' on GitHub -->
                     <img src="images/profile.jpg" alt="Portrait of Iswan Anak Edison" id="profile-pic" onerror="this.src='https://via.placeholder.com/150/333333/FFFFFF/?text=Iswan'">
                 </div>
                 <h2 class="profile-name pixel-font">Iswan<br>Edison</h2>
@@ -43,12 +43,41 @@
             </nav>
 
             <div class="sidebar-footer">
-                <div class="social-icons">
-                    <a href="#" aria-label="LinkedIn Profile">LI</a>
-                    <a href="#" aria-label="GitHub Profile">GH</a>
-                    <a href="#" aria-label="Email Me">EM</a>
-                </div>
-                <p>&copy; <span id="year">2024</span></p>
+                <!-- UPDATED SOCIAL SECTION: Vertical List with Icons & Text -->
+                <nav class="social-list">
+                    
+                    <!-- 1. LINKEDIN -->
+                    <a href="https://www.linkedin.com/in/iswan-edison-124779256/" target="_blank" class="social-item" aria-label="Visit LinkedIn Profile">
+                        <!-- SVG Icon for LinkedIn -->
+                        <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93-1.07 0-1.62.8-1.62 2.24V19h-3v-9h3v1.23c.88-1.47 2.28-1.78 3.64-1.78 2.5 0 3.36 1.7 3.36 4.53z"/>
+                        </svg>
+                        <span class="social-text">LinkedIn</span>
+                    </a>
+
+                    <!-- 2. GITHUB -->
+                    <!-- Placeholder link '#' used. Update this when you have the real link! -->
+                    <a href="#" target="_blank" class="social-item" aria-label="Visit GitHub Profile">
+                        <!-- SVG Icon for GitHub -->
+                        <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02a9.56 9.56 0 012.5-.34c.85.01 1.71.11 2.5.34 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.17 22 16.42 22 12A10 10 0 0012 2z"/>
+                        </svg>
+                        <span class="social-text">GitHub</span>
+                    </a>
+
+                    <!-- 3. EMAIL -->
+                    <!-- 'mailto:' opens the user's default email app -->
+                    <a href="mailto:iswanEdison29@gmail.com" class="social-item" aria-label="Send an Email">
+                        <!-- SVG Icon for Email -->
+                        <svg class="social-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z" />
+                            <path d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z" />
+                        </svg>
+                        <span class="social-text">Email</span>
+                    </a>
+                </nav>
+                
+                <p class="copyright">&copy; <span id="year">2024</span></p>
             </div>
         </aside>
 
@@ -134,7 +163,6 @@
                         <!-- Project 1 -->
                         <div class="project-card">
                             <div class="card-image">
-                                <!-- ACCESSIBILITY FIX: Specific alt text -->
                                 <img src="images/project-game.jpg" alt="Screenshot of 2D Platformer Game Level showing pixel art style" onerror="this.style.display='none'; this.parentNode.style.backgroundColor='#2a2a2a'">
                             </div>
                             <div class="card-content">
@@ -147,8 +175,7 @@
                         <!-- Project 2 -->
                         <div class="project-card">
                             <div class="card-image">
-                                <!-- ACCESSIBILITY FIX: Specific alt text -->
-                                <img src="images/project-db.jpg" alt="Car Rental Database System interface" onerror="this.style.display='none'; this.parentNode.style.backgroundColor='#2a2a2a'">
+                                <img src="images/project-db.jpg" alt="Screenshot or Diagram of Car Rental Database System interface" onerror="this.style.display='none'; this.parentNode.style.backgroundColor='#2a2a2a'">
                             </div>
                             <div class="card-content">
                                 <span class="card-category pixel-font">DATABASE</span>
@@ -160,7 +187,6 @@
                         <!-- Project 3 -->
                         <div class="project-card">
                             <div class="card-image">
-                                <!-- ACCESSIBILITY FIX: Specific alt text -->
                                 <img src="images/project-ui.png" alt="High fidelity Figma prototype screens for Sarawak Metro app" onerror="this.style.display='none'; this.parentNode.style.backgroundColor='#2a2a2a'">
                             </div>
                             <div class="card-content">
@@ -183,7 +209,7 @@
                         
                         <form id="contactForm" class="contact-form">
                             <div class="input-group">
-                                <label for="name" class="sr-only">Name</label> <!-- Added hidden label for screen readers -->
+                                <label for="name" class="sr-only">Name</label>
                                 <input type="text" id="name" required placeholder="Name">
                             </div>
                             <div class="input-group">
