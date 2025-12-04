@@ -6,8 +6,8 @@
     --text-main: #ffffff;
     --text-muted: #a3a3a3;
     
-    /* ACCESSIBILITY FIX: Darkened accent for better contrast with white text (Passes WCAG AA) */
-    --accent: #7c3aed; /* Previously #8b5cf6 (too light) */
+    /* Accent Color (Darkened for Contrast Compliance) */
+    --accent: #7c3aed; 
     --accent-hover: #6d28d9;
     
     --card-bg: #171717;
@@ -39,7 +39,7 @@
     box-sizing: border-box;
 }
 
-/* ACCESSIBILITY FIX: Global Focus State for Keyboard Navigation */
+/* Global Focus State for Keyboard Navigation */
 :focus-visible {
     outline: 3px solid var(--accent);
     outline-offset: 3px;
@@ -60,7 +60,7 @@ body {
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 ul { list-style: none; }
 
-/* Utility class for screen readers (Hides label visually but keeps it accessible) */
+/* Utility class for screen readers */
 .sr-only {
     position: absolute;
     width: 1px;
@@ -128,6 +128,7 @@ ul { list-style: none; }
     color: var(--text-main);
 }
 
+/* Navigation Links */
 .vertical-nav ul {
     display: flex;
     flex-direction: column;
@@ -146,21 +147,46 @@ ul { list-style: none; }
     padding-left: 5px; 
 }
 
+/* Sidebar Footer & Socials */
 .sidebar-footer {
     margin-top: auto;
     font-size: 0.9rem;
     color: var(--text-muted);
 }
 
-.social-icons {
+.social-list {
     display: flex;
+    flex-direction: column; /* Vertical List */
     gap: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-.social-icons a:hover {
-    color: var(--accent);
+.social-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform 0.2s, color 0.2s;
 }
+
+.social-item:hover {
+    color: var(--accent);
+    transform: translateX(5px); /* Small slide effect on hover */
+}
+
+.social-icon {
+    width: 22px;
+    height: 22px;
+    fill: currentColor; /* Inherits text color */
+}
+
+.copyright {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
 
 /* --- MAIN CONTENT AREA --- */
 .main-content {
@@ -341,7 +367,6 @@ ul { list-style: none; }
     font-size: 1rem;
 }
 
-/* ACCESSIBILITY FIX: Stronger focus state for inputs */
 .input-group input:focus, .input-group textarea:focus {
     outline: 2px solid var(--accent);
     outline-offset: 2px;
