@@ -1,18 +1,21 @@
 /* --- THEME VARIABLES --- */
 :root {
-    /* Default Dark Theme (Matches Reference) */
+    /* Default Dark Theme */
     --bg-body: #0a0a0a;
     --bg-sidebar: #000000;
     --text-main: #ffffff;
     --text-muted: #a3a3a3;
-    --accent: #8b5cf6; /* Violet/Purple accent */
-    --accent-hover: #7c3aed;
+    
+    /* ACCESSIBILITY FIX: Darkened accent for better contrast with white text (Passes WCAG AA) */
+    --accent: #7c3aed; /* Previously #8b5cf6 (too light) */
+    --accent-hover: #6d28d9;
+    
     --card-bg: #171717;
     --border-color: #333333;
     
     /* Fonts */
     --font-main: 'Roboto', sans-serif;
-    --font-pixel: 'VT323', monospace; /* Pixelated Style */
+    --font-pixel: 'VT323', monospace;
     
     --sidebar-width: 260px;
 }
@@ -23,7 +26,7 @@
     --bg-sidebar: #ffffff;
     --text-main: #111827;
     --text-muted: #4b5563;
-    --accent: #2563eb; /* Blue for light mode */
+    --accent: #2563eb; 
     --accent-hover: #1d4ed8;
     --card-bg: #ffffff;
     --border-color: #e5e7eb;
@@ -34,6 +37,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* ACCESSIBILITY FIX: Global Focus State for Keyboard Navigation */
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
 }
 
 html {
@@ -50,6 +59,19 @@ body {
 
 a { text-decoration: none; color: inherit; transition: 0.3s; }
 ul { list-style: none; }
+
+/* Utility class for screen readers (Hides label visually but keeps it accessible) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
 
 .pixel-font {
     font-family: var(--font-pixel);
@@ -121,7 +143,7 @@ ul { list-style: none; }
 
 .nav-link:hover, .nav-link.active {
     color: var(--accent);
-    padding-left: 5px; /* Subtle movement */
+    padding-left: 5px; 
 }
 
 .sidebar-footer {
@@ -171,13 +193,12 @@ ul { list-style: none; }
 
 /* --- HERO SECTION --- */
 .hero-section {
-    background-color: var(--bg-body); /* Can add a bg image here */
+    background-color: var(--bg-body);
     position: relative;
     display: flex;
     align-items: center;
 }
 
-/* Big "HELLO" overlay style */
 .hero-overlay h1 {
     font-size: 8rem;
     line-height: 0.9;
@@ -274,15 +295,14 @@ ul { list-style: none; }
 
 .card-image {
     height: 180px;
-    background-color: #2a2a2a; /* Fallback gray if image fails */
-    overflow: hidden; /* Ensures image doesn't spill out */
+    background-color: #2a2a2a; 
+    overflow: hidden; 
 }
 
-/* ADDED THIS: Ensures the image fills the area */
 .card-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Crops image to fit the rectangle nicely */
+    object-fit: cover; 
     display: block;
 }
 
@@ -321,8 +341,10 @@ ul { list-style: none; }
     font-size: 1rem;
 }
 
+/* ACCESSIBILITY FIX: Stronger focus state for inputs */
 .input-group input:focus, .input-group textarea:focus {
-    outline: none;
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
     border-color: var(--accent);
 }
 
@@ -371,6 +393,8 @@ ul { list-style: none; }
     cursor: pointer;
     flex-direction: column;
     gap: 5px;
+    background: transparent;
+    border: none;
 }
 
 .mobile-toggle span {
@@ -382,12 +406,12 @@ ul { list-style: none; }
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
     .sidebar {
-        transform: translateX(-100%); /* Hide sidebar */
+        transform: translateX(-100%); 
         width: 80%;
     }
     
     .sidebar.active {
-        transform: translateX(0); /* Show sidebar */
+        transform: translateX(0); 
     }
 
     .main-content {
