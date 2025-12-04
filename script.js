@@ -1,83 +1,118 @@
-// --- JS FEATURE 1: Mobile Navigation Toggle ---
-// Selects the hamburger icon and the nav links list
-const mobileMenuBtn = document.getElementById('mobile-menu');
-const navLinks = document.querySelector('.nav-links');
+/**
+ * PERSONAL PORTFOLIO SCRIPT
+ * Features:
+ * 1. Mobile Sidebar Toggle
+ * 2. Theme Switcher (Dark/Light)
+ * 3. Scroll Spy (Active Link Highlight)
+ * 4. Contact Form Simulation
+ */
 
-mobileMenuBtn.addEventListener('click', () => {
-    // Toggles the 'active' class which slides the menu in/out via CSS
-    navLinks.classList.toggle('active');
-});
+// --- 1. MOBILE MENU TOGGLE ---
+const mobileBtn = document.getElementById('mobile-menu-btn');
+const sidebar = document.querySelector('.sidebar');
+const mainContent = document.querySelector('.main-content');
 
-// Close mobile menu when a link is clicked
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
+// Open/Close sidebar on mobile click
+if (mobileBtn) {
+    mobileBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('active');
     });
-});
+}
+
+// Close sidebar when clicking outside (on main content)
+if (mainContent) {
+    mainContent.addEventListener('click', () => {
+        if (sidebar.classList.contains('active')) {
+            sidebar.classList.remove('active');
+        }
+    });
+}
 
 
-// --- JS FEATURE 2: Active Scroll Highlighting (Scroll Spy) ---
-// Highlights the nav link corresponding to the current section
+// --- 2. THEME SWITCHER (Dark/Light) ---
+const themeBtn = document.getElementById('theme-toggle');
+const themeIcon = themeBtn ? themeBtn.querySelector('.theme-icon') : null;
+const htmlElement = document.documentElement;
+
+// Check local storage for saved theme
+const savedTheme = localStorage.getItem('theme') || 'dark';
+htmlElement.setAttribute('data-theme', savedTheme);
+if(themeIcon) updateIcon(savedTheme);
+
+if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+        const currentTheme = htmlElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        htmlElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateIcon(newTheme);
+    });
+}
+
+function updateIcon(theme) {
+    if (theme === 'dark') {
+        themeIcon.textContent = '☀'; // Sun icon for switching to light
+    } else {
+        themeIcon.textContent = '☾'; // Moon icon for switching to dark
+    }
+}
+
+
+// --- 3. SCROLL SPY (Active Link Highlighting) ---
 const sections = document.querySelectorAll('section');
-const navItems = document.querySelectorAll('.nav-link');
+const navLinks = document.querySelectorAll('.nav-link');
 
 window.addEventListener('scroll', () => {
     let current = '';
     
-    // Check which section is currently in the viewport
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        // 60px offset for the fixed header
-        if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+        // Adjust offset for better accuracy
+        if (pageYOffset >= (sectionTop - sectionHeight / 4)) {
             current = section.getAttribute('id');
         }
     });
 
-    // Add 'active' class to matching nav link
-    navItems.forEach(li => {
-        li.classList.remove('active');
-        if (li.getAttribute('href').includes(current)) {
-            li.classList.add('active');
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href').includes(current)) {
+            link.classList.add('active');
         }
     });
 });
 
 
-// --- JS FEATURE 3: Contact Form Handling ---
-// Prevents page reload and simulates a successful submission
-const contactForm = document.getElementById('contactForm');
-const feedbackMsg = document.getElementById('formFeedback');
+// --- 4. CONTACT FORM HANDLING ---
+const form = document.getElementById('contactForm');
+const feedback = document.getElementById('formFeedback');
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault(); // Stop the form from actually sending data (Front-end only)
-    
-    // Basic validation check (inputs have 'required' attribute in HTML)
-    const name = document.getElementById('name').value;
-    
-    // Simulate sending delay
-    const submitBtn = contactForm.querySelector('button');
-    const originalText = submitBtn.innerText;
-    submitBtn.innerText = 'Sending...';
-    submitBtn.disabled = true;
+if (form) {
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button');
+        const originalText = btn.innerText;
+        
+        btn.innerText = 'SENDING...';
+        btn.disabled = true;
 
-    setTimeout(() => {
-        // Reset form and show success message
-        contactForm.reset();
-        feedbackMsg.innerHTML = `Thanks ${name}! I'll get back to you soon.`;
-        feedbackMsg.classList.add('feedback-success');
-        
-        submitBtn.innerText = originalText;
-        submitBtn.disabled = false;
-        
-        // Hide message after 5 seconds
+        // Simulate API call
         setTimeout(() => {
-            feedbackMsg.classList.remove('feedback-success');
-        }, 5000);
-    }, 1500);
-});
+            form.reset();
+            feedback.classList.add('feedback-success');
+            btn.innerText = originalText;
+            btn.disabled = false;
 
+            setTimeout(() => {
+                feedback.classList.remove('feedback-success');
+            }, 3000);
+        }, 1500);
+    });
+}
 
-// --- JS FEATURE 4: Dynamic Copyright Year ---
-// Automatically updates the footer year
-document.getElementById('year').textContent = new Date().getFullYear();
+// --- 5. YEAR UPDATE ---
+const yearSpan = document.getElementById('year');
+if(yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+}
