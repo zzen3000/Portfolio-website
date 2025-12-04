@@ -16,20 +16,19 @@
 </head>
 <body>
 
-    <!-- THEME TOGGLE BUTTON (Fixed position) -->
+    <!-- THEME TOGGLE BUTTON -->
     <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark/Light Mode">
         <span class="theme-icon">☀</span>
     </button>
 
     <div class="layout-wrapper">
         
-        <!-- SIDEBAR NAVIGATION (Left Side) -->
+        <!-- SIDEBAR NAVIGATION -->
         <aside class="sidebar">
             <div class="profile-container">
-                <!-- Circular Profile Image -->
-                <!-- ACTION REQUIRED: Rename 'profile.jpg.jpg' to 'profile.jpg' on GitHub! -->
                 <div class="profile-img-circle">
-                    <img src="images/profile.jpg" alt="Iswan Profile" id="profile-pic" onerror="this.src='https://via.placeholder.com/150/333333/FFFFFF/?text=Iswan'">
+                    <!-- ACCESSIBILITY FIX: More descriptive alt text -->
+                    <img src="images/profile.jpg" alt="Portrait of Iswan Anak Edison" id="profile-pic" onerror="this.src='https://via.placeholder.com/150/333333/FFFFFF/?text=Iswan'">
                 </div>
                 <h2 class="profile-name pixel-font">Iswan<br>Edison</h2>
             </div>
@@ -45,23 +44,22 @@
 
             <div class="sidebar-footer">
                 <div class="social-icons">
-                    <!-- Simple text icons -->
-                    <a href="#">LI</a>
-                    <a href="#">GH</a>
-                    <a href="#">EM</a>
+                    <a href="#" aria-label="LinkedIn Profile">LI</a>
+                    <a href="#" aria-label="GitHub Profile">GH</a>
+                    <a href="#" aria-label="Email Me">EM</a>
                 </div>
                 <p>&copy; <span id="year">2024</span></p>
             </div>
         </aside>
 
-        <!-- MOBILE MENU TOGGLE (Visible only on mobile) -->
-        <div class="mobile-toggle" id="mobile-menu-btn">
+        <!-- MOBILE MENU TOGGLE -->
+        <button class="mobile-toggle" id="mobile-menu-btn" aria-label="Open Navigation Menu">
             <span></span>
             <span></span>
             <span></span>
-        </div>
+        </button>
 
-        <!-- MAIN CONTENT AREA (Right Side) -->
+        <!-- MAIN CONTENT AREA -->
         <main class="main-content">
             
             <!-- HERO SECTION -->
@@ -135,9 +133,9 @@
                         
                         <!-- Project 1 -->
                         <div class="project-card">
-                            <!-- Correct: This matches your GitHub file -->
                             <div class="card-image">
-                                <img src="images/project-game.jpg" alt="Game Project" onerror="this.style.display='none'; this.parentNode.style.backgroundColor='#2a2a2a'">
+                                <!-- ACCESSIBILITY FIX: Specific alt text -->
+                                <img src="images/project-game.jpg" alt="Screenshot of 2D Platformer Game Level showing pixel art style" onerror="this.style.display='none'; this.parentNode.style.backgroundColor='#2a2a2a'">
                             </div>
                             <div class="card-content">
                                 <span class="card-category pixel-font">GAME DEV</span>
@@ -148,9 +146,9 @@
 
                         <!-- Project 2 -->
                         <div class="project-card">
-                            <!-- Correct: This matches your GitHub file -->
                             <div class="card-image">
-                                <img src="images/project-db.jpg" alt="Database Project" onerror="this.style.display='none'; this.parentNode.style.backgroundColor='#2a2a2a'">
+                                <!-- ACCESSIBILITY FIX: Specific alt text -->
+                                <img src="images/project-db.png" alt="Screenshot or Diagram of Car Rental Database System interface" onerror="this.style.display='none'; this.parentNode.style.backgroundColor='#2a2a2a'">
                             </div>
                             <div class="card-content">
                                 <span class="card-category pixel-font">DATABASE</span>
@@ -161,9 +159,9 @@
 
                         <!-- Project 3 -->
                         <div class="project-card">
-                            <!-- UPDATED: Changed .jpg to .png to match your GitHub file -->
                             <div class="card-image">
-                                <img src="images/project-ui.png" alt="UI Project" onerror="this.style.display='none'; this.parentNode.style.backgroundColor='#2a2a2a'">
+                                <!-- ACCESSIBILITY FIX: Specific alt text -->
+                                <img src="images/project-ui.png" alt="High fidelity Figma prototype screens for Sarawak Metro app" onerror="this.style.display='none'; this.parentNode.style.backgroundColor='#2a2a2a'">
                             </div>
                             <div class="card-content">
                                 <span class="card-category pixel-font">UI/UX DESIGN</span>
@@ -185,12 +183,15 @@
                         
                         <form id="contactForm" class="contact-form">
                             <div class="input-group">
+                                <label for="name" class="sr-only">Name</label> <!-- Added hidden label for screen readers -->
                                 <input type="text" id="name" required placeholder="Name">
                             </div>
                             <div class="input-group">
+                                <label for="email" class="sr-only">Email</label>
                                 <input type="email" id="email" required placeholder="Email">
                             </div>
                             <div class="input-group">
+                                <label for="message" class="sr-only">Message</label>
                                 <textarea id="message" rows="5" required placeholder="Message"></textarea>
                             </div>
                             <button type="submit" class="btn pixel-font">SEND MESSAGE</button>
@@ -203,7 +204,6 @@
         </main>
     </div>
 
-    <!-- Link to JS -->
     <script src="script.js"></script>
 </body>
 </html>
