@@ -26,10 +26,10 @@
         <!-- SIDEBAR NAVIGATION (Left Side) -->
         <aside class="sidebar">
             <div class="profile-container">
-                <!-- Circular Profile Image Placeholder -->
+                <!-- Circular Profile Image -->
+                <!-- Ensure you have a file named 'profile.jpg' in your 'images' folder on GitHub -->
                 <div class="profile-img-circle">
-                    <!-- Replace the src below with your actual image URL if you have one -->
-                    <img src="https://via.placeholder.com/150/333333/FFFFFF/?text=Iswan" alt="Iswan Profile" id="profile-pic">
+                    <img src="images/profile.jpg" alt="Iswan Profile" id="profile-pic" onerror="this.src='https://via.placeholder.com/150/333333/FFFFFF/?text=Iswan'">
                 </div>
                 <h2 class="profile-name pixel-font">Iswan<br>Edison</h2>
             </div>
@@ -102,9 +102,11 @@
                                         <strong>Sijil Matrikulasi KPM</strong><br>
                                         Johor Matriculation College | 2021/2022 | CGPA: 3.00
                                     </li>
+                                    <!-- NEW ENTRY ADDED HERE -->
                                     <li>
                                         <strong>Sijil Pelajaran Malaysia</strong><br>
-                                        SMK Taman Bukit Indah | 2013-2019 | 1A,1A-,2B+,3B,1C+,1C,1E
+                                        SMK Taman Bukit Indah | 2013-2019<br>
+                                        <small>Result: 1A, 1A-, 2B+, 3B, 1C+, 1C, 1E</small>
                                     </li>
                                 </ul>
                             </div>
@@ -134,7 +136,10 @@
                         
                         <!-- Project 1 -->
                         <div class="project-card">
-                            <div class="card-image"></div>
+                            <!-- Looks for 'images/project-game.jpg' -->
+                            <div class="card-image">
+                                <img src="images/project-game.jpg" alt="Game Project" onerror="this.style.display='none'; this.parentNode.style.backgroundColor='#2a2a2a'">
+                            </div>
                             <div class="card-content">
                                 <span class="card-category pixel-font">GAME DEV</span>
                                 <h3>2D Platformer Game</h3>
@@ -144,7 +149,10 @@
 
                         <!-- Project 2 -->
                         <div class="project-card">
-                            <div class="card-image"></div>
+                            <!-- Looks for 'images/project-db.jpg' -->
+                            <div class="card-image">
+                                <img src="images/project-db.jpg" alt="Database Project" onerror="this.style.display='none'; this.parentNode.style.backgroundColor='#2a2a2a'">
+                            </div>
                             <div class="card-content">
                                 <span class="card-category pixel-font">DATABASE</span>
                                 <h3>Car Rental System</h3>
@@ -154,7 +162,10 @@
 
                         <!-- Project 3 -->
                         <div class="project-card">
-                            <div class="card-image"></div>
+                            <!-- Looks for 'images/project-ui.jpg' -->
+                            <div class="card-image">
+                                <img src="images/project-ui.jpg" alt="UI Project" onerror="this.style.display='none'; this.parentNode.style.backgroundColor='#2a2a2a'">
+                            </div>
                             <div class="card-content">
                                 <span class="card-category pixel-font">UI/UX DESIGN</span>
                                 <h3>Sarawak Metro ART</h3>
