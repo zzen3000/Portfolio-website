@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Iswan Anak Edison, Multimedia Computing Student.">
+    <title>Iswan Anak Edison | Portfolio</title>
+    
+    <!-- Using Google Fonts for better typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- LINK TO EXTERNAL CSS FILE -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Iswan.Dev</div>
+                
+                <!-- JS Feature 1: Mobile Hamburger Menu -->
+                <div class="menu-toggle" id="mobile-menu" aria-label="Toggle navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home">
+            <div class="container hero-content">
+                <h1>Hello, I'm Iswan Anak Edison</h1>
+                <p class="hero-subtitle">
+                    Multimedia Computing Student @ UNIMAS.<br>
+                    I build innovative digital media projects and user-centered experiences.
+                </p>
+                <a href="#projects" class="btn">View My Work</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-grid">
+                    
+                    <!-- Bio & Education -->
+                    <article class="about-card">
+                        <h3>Education & Background</h3>
+                        <p style="margin-bottom: 1.5rem;">
+                            I am a motivated student with foundations in programming, web development, and graphic design. 
+                            I am passionate about designing user-centered digital experiences and contributing to real-world applications.
+                        </p>
+                        
+                        <div class="education-item">
+                            <h4>Bachelor of Computer Science (Multimedia Computing)</h4>
+                            <p>UNIMAS | Expected Grad: 2027</p>
+                            <small>CGPA: 2.91 (Semester 4)</small>
+                        </div>
+                        
+                        <div class="education-item">
+                            <h4>Sijil Matrikulasi KPM</h4>
+                            <p>Johor Matriculation College | 2021/2022</p>
+                            <small>CGPA: 3.00</small>
+                        </div>
+                    </article>
+
+                    <!-- Skills -->
+                    <article class="about-card">
+                        <h3>Technical Skills</h3>
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4>Programming & Databases</h4>
+                            <div class="skills-list">
+                                <span class="skill-tag">HTML/CSS</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">C#</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">MySQL</span>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <h4>Tools & Engines</h4>
+                            <div class="skills-list">
+                                <span class="skill-tag">Unity</span>
+                                <span class="skill-tag">Godot</span>
+                                <span class="skill-tag">Figma</span>
+                                <span class="skill-tag">Adobe Suite</span>
+                                <span class="skill-tag">Git</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">My Projects</h2>
+                <div class="projects-grid">
+                    
+                    <!-- Project 1 -->
+                    <article class="project-card">
+                        <div class="project-img-placeholder">
+                            [Game Screenshot Placeholder]
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tech">Unity / Godot / C#</div>
+                            <h3>2D Platformer Game</h3>
+                            <p>Built a complete 2D platformer implementing game logic, physics, UI, and integrating original 2D art assets.</p>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card">
+                        <div class="project-img-placeholder">
+                            [Database Diagram Placeholder]
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tech">MySQL / MariaDB</div>
+                            <h3>Car Rental Database System</h3>
+                            <p>Designed a normalized MySQL schema and built a system for managing vehicle inventory, customer bookings, and admin reports.</p>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card">
+                        <div class="project-img-placeholder">
+                            [Figma Prototype Placeholder]
+                        </div>
+                        <div class="project-content">
+                            <div class="project-tech">Figma / UI/UX</div>
+                            <h3>Sarawak Metro ART App</h3>
+                            <p>UI/UX Design project for KUTS Sarawak Metro. Created a user-friendly booking prototype.</p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-form-container">
+                    <p style="margin-bottom: 2rem;">
+                        Located in Nusajaya, Johor. Open to opportunities.<br>
+                        Email: <a href="mailto:iswanEdison29@gmail.com" style="color: var(--primary-color);">iswanEdison29@gmail.com</a>
+                    </p>
+                    
+                    <!-- JS Feature 2: Contact Form Validation -->
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="5" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                    </form>
+                    <div id="formFeedback" class="feedback-msg">Thank you! Your message has been sent.</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#" aria-label="LinkedIn">LinkedIn</a>
+                <a href="#" aria-label="GitHub">GitHub</a>
+                <a href="#" aria-label="Email">Email</a>
+            </div>
+            <p>&copy; <span id="year">2024</span> Iswan Anak Edison. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- LINK TO EXTERNAL JS FILE -->
+    <script src="script.js"></script>
+</body>
+</html>
