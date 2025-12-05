@@ -1,4 +1,4 @@
-//MOBILE MENU TOGGLE
+//MOBILE MENU TOGGLE ((https://stackoverflow.com/questions/79672575/how-can-i-add-a-responsive-toggle-button-for-a-mobile-nav-menu-using-javascript))
 const mobileBtn = document.getElementById('mobile-menu-btn');
 const sidebar = document.querySelector('.sidebar');
 const mainContent = document.querySelector('.main-content');
@@ -25,7 +25,7 @@ const themeBtn = document.getElementById('theme-toggle');
 const themeIcon = themeBtn ? themeBtn.querySelector('.theme-icon') : null;
 const htmlElement = document.documentElement;
 
-// local storage checking theme fot the current user default theme
+// local storage checking theme fot the current user default theme (https://stackoverflow.com/questions/70117921/how-can-i-use-localstorage-in-a-dark-mode-toggle)
 const savedTheme = localStorage.getItem('theme') || 'dark';
 htmlElement.setAttribute('data-theme', savedTheme);
 if(themeIcon) updateIcon(savedTheme);
@@ -50,7 +50,7 @@ function updateIcon(theme) {
 }
 
 
-//active Link Highlighting
+//active link highlight (https://stackoverflow.com/questions/38025517/how-to-highlight-active-links)
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -75,7 +75,7 @@ window.addEventListener('scroll', () => {
 });
 
 
-//CONTACT FORM HANDLING
+//contaact section handling
 const form = document.getElementById('contactForm');
 const feedback = document.getElementById('formFeedback');
 
@@ -102,7 +102,7 @@ if (form) {
     });
 }
 
-// --- 5. YEAR UPDATE ---
+// chaeck and year update
 const yearSpan = document.getElementById('year');
 if(yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
