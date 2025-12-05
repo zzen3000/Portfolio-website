@@ -1,25 +1,16 @@
-/**
- * PERSONAL PORTFOLIO SCRIPT
- * Features:
- * 1. Mobile Sidebar Toggle
- * 2. Theme Switcher (Dark/Light)
- * 3. Scroll Spy (Active Link Highlight)
- * 4. Contact Form Simulation
- */
-
-// --- 1. MOBILE MENU TOGGLE ---
+//MOBILE MENU TOGGLE
 const mobileBtn = document.getElementById('mobile-menu-btn');
 const sidebar = document.querySelector('.sidebar');
 const mainContent = document.querySelector('.main-content');
 
-// Open/Close sidebar on mobile click
+//for mobile toggle
 if (mobileBtn) {
     mobileBtn.addEventListener('click', () => {
         sidebar.classList.toggle('active');
     });
 }
 
-// Close sidebar when clicking outside (on main content)
+//close sidebar when clicking outside (on main content)
 if (mainContent) {
     mainContent.addEventListener('click', () => {
         if (sidebar.classList.contains('active')) {
@@ -29,12 +20,12 @@ if (mainContent) {
 }
 
 
-// --- 2. THEME SWITCHER (Dark/Light) ---
+// #A 1 toggle draktheme
 const themeBtn = document.getElementById('theme-toggle');
 const themeIcon = themeBtn ? themeBtn.querySelector('.theme-icon') : null;
 const htmlElement = document.documentElement;
 
-// Check local storage for saved theme
+// local storage checking theme fot the current user default theme
 const savedTheme = localStorage.getItem('theme') || 'dark';
 htmlElement.setAttribute('data-theme', savedTheme);
 if(themeIcon) updateIcon(savedTheme);
@@ -52,14 +43,14 @@ if (themeBtn) {
 
 function updateIcon(theme) {
     if (theme === 'dark') {
-        themeIcon.textContent = '☀'; // Sun icon for switching to light
+        themeIcon.textContent = '☀'; //Sun icon for switching to light
     } else {
-        themeIcon.textContent = '☾'; // Moon icon for switching to dark
+        themeIcon.textContent = '☾'; //Moon icon for switching to dark
     }
 }
 
 
-// --- 3. SCROLL SPY (Active Link Highlighting) ---
+//active Link Highlighting
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-link');
 
@@ -69,7 +60,7 @@ window.addEventListener('scroll', () => {
     sections.forEach(section => {
         const sectionTop = section.offsetTop;
         const sectionHeight = section.clientHeight;
-        // Adjust offset for better accuracy
+        //check if offset
         if (pageYOffset >= (sectionTop - sectionHeight / 4)) {
             current = section.getAttribute('id');
         }
@@ -84,7 +75,7 @@ window.addEventListener('scroll', () => {
 });
 
 
-// --- 4. CONTACT FORM HANDLING ---
+//CONTACT FORM HANDLING
 const form = document.getElementById('contactForm');
 const feedback = document.getElementById('formFeedback');
 
@@ -97,7 +88,7 @@ if (form) {
         btn.innerText = 'SENDING...';
         btn.disabled = true;
 
-        // Simulate API call
+        // api calling
         setTimeout(() => {
             form.reset();
             feedback.classList.add('feedback-success');
