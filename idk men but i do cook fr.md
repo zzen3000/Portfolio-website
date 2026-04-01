@@ -1,5 +1,9 @@
 # 🚀Portfolio Website
 
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+
 > Live Demo: [Check it out here](https://zzen3000.github.io/Portfolio-website/) ✨
 
 Welcome to the repo! So, here's the lore: I actually cooked this whole project up a few months ago (late 2025) but completely ghosted the documentation. Today, I'm finally back to drop this README so the repo doesn't look empty. Better late than never, right? 
