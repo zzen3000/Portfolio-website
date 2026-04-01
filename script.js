@@ -75,7 +75,7 @@ window.addEventListener('scroll', () => {
 });
 
 
-//contaact section handling
+//contact section handling
 const form = document.getElementById('contactForm');
 const feedback = document.getElementById('formFeedback');
 
@@ -102,7 +102,7 @@ if (form) {
     });
 }
 
-// chaeck and year update
+// check and year update
 const yearSpan = document.getElementById('year');
 if(yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
